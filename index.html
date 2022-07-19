@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumnos</title>
+    <p id="ima"><img src="http://www.ittlahuac2.edu.mx/assets/img/pleca_tecnm.jpg" width="300px" height="100px" ></p>
+</head>
+<header>
+    <h1 id="institucion">Instituto Tecnologico de Tlahuac II</h1>
+    
+</header>
+
+<body id="texto">
+    
+    <h3>
+        Este es un formulario para registrar a los alumnos del ITT2, con el fin de tener un control de lista, ademas obtener los datos de forma precisa
+        y ordenada.
+    </h3>
+    <p id="ima"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ62_9S-dxC55SoTEazT4cP0ZcjJ02Ahn8WXQ&usqp=CAU" width="500px" height="400px" ></p>
+    <div id="contenedor">
+        <form id="formu" action="" method="post">
+            <h2 class="error" id="msj"></h2>
+           <br> <p class="ti">Nombre: <input type="text" name="nombre" size="40" id="nombre"></p>
+
+           <br>
+            <h2 class="error" id="msj2"></h2>
+            <br>
+            <br><p class="ti">Año de nacimiento: <input type="number"  min="1960" id="año"></p>
+        
+
+         <br>
+        <h2 class="error" id="msj3"></h2>
+        <br>
+        <br>  <p class="ti"> Carrera</p>
+              <select id="carrera">
+                <option selected="selected">Selecciona una opción...</option>
+                <option>Logistica</option>
+                <option>Gestion</option>
+                <option>Mecanica</option>
+                <option>Tic´s</option>
+              </select>
+            
+              <br>
+                <h2 class="error" id="msj4"></h2>
+            <br>
+            <br> <p class="ti">Semestre:<br> 
+                <input class="semestre" type="checkbox"  value="1">1    
+                <input class="semestre" type="checkbox"  value="2">2
+                <input class="semestre" type="checkbox"  value="3">3
+                <input class="semestre" type="checkbox"  value="4">4
+                <input class="semestre" type="checkbox"  value="5">5
+                <input class="semestre" type="checkbox"  value="6">6
+                <input class="semestre" type="checkbox"  value="7">7
+                <input class="semestre" type="checkbox"  value="8">8
+                <input class="semestre" type="checkbox"  value="9">9
+            </p>
+            
+
+            <br>
+                <h2 class="error" id="msj5"></h2>
+            <br>
+                <p class="ti">Sexo:
+              <input class="rad" type="radio" name="hm" value="h"> Hombre
+              <input class="rad" type="radio" name="hm" value="m"> Mujer
+            </p>
+            <p>
+              <input class="boton" type="submit" value="Enviar">
+              <input class="boton" type="reset" value="Borrar">
+            </p>
+            <p>          
+                     
+                  <br>
+            </p>
+          </form>
+    </div>
+    
+      <footer>
+        <p id="bajos">
+            ESTE ES EL 
+        </p>
+      </footer>
+      <style>
+        header{
+            background-color: blue;
+        }
+        body{
+            background-color:white;
+        }
+        #ima{
+            text-align: center;
+        }
+        .boton{
+            font-size: large;
+        }
+        #institucion{
+            font-family:'Courier New', Courier, monospace;
+            text-align: center;
+            text-decoration:underline;
+            text-decoration-color: blue;
+            color: white;
+           
+        }
+        #contenedor{
+            background-color: cornflowerblue;
+            margin:auto;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .ti{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+        #formu{
+            margin:auto;
+        }
+        footer{
+            background-color: blue;
+        }
+        #bajos{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: larger;
+            color:white;
+        }
+        #texto{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .error{
+            font-size:medium;
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+      </style>
+
+      <script>
+        const nombre = document.getElementById('nombre');
+        const año = document.getElementById('año');
+        const carrera = document.getElementById('carrera');
+        const semestre = document.getElementsByClassName('semestre');
+        const sexo = document.getElementsByClassName('rad')
+
+        const msj = document.getElementById('msj');
+        const msj2 = document.getElementById('msj2');
+        const msj3= document.getElementById('msj3');
+        const msj4 = document.getElementById('msj4');
+        const msj5 = document.getElementById('msj5');
+
+        const form = document.getElementById('formu');
+
+        form.addEventListener("submit", e=>{
+            e.preventDefault();
+if(nombre.value.length<2){
+    if(nombre.value.length<2){
+                msj.innerText="El Nombre debe de ser mayor a dos letras"
+
+            }
+            if(año.value.length<=0){
+                msj2.innerText="Debe de ingresar su año de nacimiento"
+            }
+            if(carrera.value.length==null){
+                msj3.innerText="Debe de ingresar su carrera"
+            }
+            
+        }else{
+                alert("MESAJE ENVIADO")
+            }
+}
+            )
+
+      </script>
+</body>
+</html>
